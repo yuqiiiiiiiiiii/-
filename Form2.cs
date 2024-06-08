@@ -20,10 +20,7 @@ namespace finalproject
         Computer C = new Computer();
         private Color _originalColor;
         private Timer ColorChangeTimer;
-        private Timer a1pause;
-        private Timer a1fall;
-        private bool _ispaused;
-
+        
         public Form2()
         {
             InitializeComponent();
@@ -32,13 +29,8 @@ namespace finalproject
             ColorChangeTimer = new Timer();
             a1pause = new Timer();
             a1fall = new Timer();
-            ColorChangeTimer.Interval = 100;
-            a1fall.Interval = 100;
-            a1pause.Interval = 30000;
+            ColorChangeTimer.Interval = 100;    
             ColorChangeTimer.Tick += new EventHandler(timer1_Tick);
-            this.a1pause.Tick += new System.EventHandler(this.timer2_Tick);
-
-
         }
         private Boolean hit(Label B, PictureBox T)
         {
@@ -69,13 +61,6 @@ namespace finalproject
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(Form2_KeyDown);
             C.Audio.Play(Properties.Resources.未聞花名music, AudioPlayMode.Background);
-
-
-
-
-
-
-
         }
         private void Form2_KeyDown(object sender, KeyEventArgs e)
         {
@@ -175,16 +160,6 @@ namespace finalproject
                     
                 }
             }
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-  
         }
     }
 }
